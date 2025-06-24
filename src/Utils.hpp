@@ -40,7 +40,16 @@ class Utils {
           { KEY_F1, "F1" }, { KEY_F2, "F2" }, { KEY_F3, "F3" },
           { KEY_F4, "F4" }, { KEY_F5, "F5" }, { KEY_F6, "F6" },
           { KEY_F7, "F7" }, { KEY_F8, "F8" }, { KEY_F9, "F9" },
-          { KEY_F10, "F10" }, { KEY_F11, "F11" }, { KEY_F12, "F12" }
+          { KEY_F10, "F10" }, { KEY_F11, "F11" }, { KEY_F12, "F12" },
+          { KEY_LEFTCTRL, "LeftCtrl" }, { KEY_RIGHTCTRL, "RightCtrl" },
+          { KEY_LEFTSHIFT, "LeftShift" }, { KEY_RIGHTSHIFT, "RightShift" },
+          { KEY_LEFTALT, "LeftAlt" }, { KEY_RIGHTALT, "RightAlt" },
+          { KEY_LEFTMETA, "LeftMeta" }, { KEY_RIGHTMETA, "RightMeta" },
+          { KEY_PRINT, "PrintScreen" }, { KEY_SCROLLLOCK, "ScrollLock" },
+          { KEY_PAUSE, "Pause" }, { KEY_INSERT, "Insert" },
+          { KEY_DELETE, "Delete" }, { KEY_HOME, "Home" },
+          { KEY_END, "End" }, { KEY_PAGEUP, "PageUp" },
+          { KEY_PAGEDOWN, "PageDown" }
       };
       return keymap.contains(code) ? keymap[code] : "[?]";
     }
