@@ -31,4 +31,4 @@ fi
 
 # exec the keylogger
 echo "Starting keylogger on $event"
-./build/linux-keylogger "/dev/input/$event"
+sudo ./build/linux-keylogger "/dev/input/$event"
