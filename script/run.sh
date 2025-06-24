@@ -1,11 +1,13 @@
+
 #!/bin/bash
 
-# Parse each input block fully
 keyboard_event=$(awk '
   BEGIN { RS=""; FS="\n" }
-  /AT Translated Set 2 keyboard/ {
+  {
+    has_kbd = 0;
     for (i = 1; i <= NF; i++) {
-      if ($i ~ /Handlers/) {
+      if ($i ~ /Handlers=.*kbd.*event/) has_kbd = 1;
+      if (has_kbd && $i ~ /Handlers/) {
         match($i, /event[0-9]+/, ev);
         print ev[0];
         exit;
@@ -19,5 +21,5 @@ if [[ -z "$keyboard_event" ]]; then
     exit 1
 fi
 
-echo "Found keyboard at /dev/input/$keyboard_event"
+echo "Using /dev/input/$keyboard_event"
 sudo ./build/linux-keylogger "/dev/input/$keyboard_event"
